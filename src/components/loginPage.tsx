@@ -2,12 +2,12 @@
 import { router } from "expo-router";
 import React from "react";
 import {
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const LoginPage: React.FC = () => {
@@ -21,6 +21,7 @@ const LoginPage: React.FC = () => {
           style={styles.input}
           placeholderTextColor="#999"
         />
+
         <TextInput
           placeholder="Password"
           style={styles.input}
@@ -28,6 +29,15 @@ const LoginPage: React.FC = () => {
           placeholderTextColor="#999"
         />
 
+        {/* LOGIN BUTTON → goes to /home */}
+        <TouchableOpacity
+          style={[styles.button, styles.loginButton]}
+          onPress={() => router.push("/home")}
+        >
+          <Text style={styles.loginText}>Login</Text>
+        </TouchableOpacity>
+
+        {/* BACK BUTTON → goes to Welcome */}
         <TouchableOpacity style={styles.button} onPress={() => router.back()}>
           <Text style={styles.buttonText}>Back to Welcome</Text>
         </TouchableOpacity>
@@ -53,7 +63,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     color: "#FF8719",
     textAlign: "center",
-    // fontFamily: "Raleway-Bold",
   },
   input: {
     height: 48,
@@ -63,8 +72,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     color: "#333",
   },
+
+  /* ---------- BUTTONS ---------- */
+
   button: {
-    marginTop: 16,
+    marginTop: 12,
     paddingVertical: 14,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
@@ -72,6 +84,16 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#606162",
-    // fontFamily: "Raleway-Medium",
+  },
+
+  /* LOGIN BUTTON (Orange) */
+  loginButton: {
+    backgroundColor: "#FF8719",
+    marginTop: 20,
+  },
+  loginText: {
+    color: "#FFFFFF",
+    fontWeight: "600",
+    fontSize: 16,
   },
 });

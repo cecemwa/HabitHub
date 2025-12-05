@@ -2,12 +2,12 @@
 import { router } from "expo-router";
 import React from "react";
 import {
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const RegisterPage: React.FC = () => {
@@ -34,6 +34,12 @@ const RegisterPage: React.FC = () => {
           placeholderTextColor="#999"
         />
 
+        {/* REGISTER BUTTON — does NOT route yet */}
+        <TouchableOpacity style={[styles.button, styles.registerButton]}>
+          <Text style={styles.registerText}>Register</Text>
+        </TouchableOpacity>
+
+        {/* BACK BUTTON */}
         <TouchableOpacity style={styles.button} onPress={() => router.back()}>
           <Text style={styles.buttonText}>Back to Welcome</Text>
         </TouchableOpacity>
@@ -59,7 +65,6 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     color: "#FF8719",
     textAlign: "center",
-    // fontFamily: "Raleway-Bold",
   },
   input: {
     height: 48,
@@ -69,8 +74,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     color: "#333",
   },
+
+  /* BASE BUTTON */
   button: {
-    marginTop: 16,
+    marginTop: 12,
     paddingVertical: 14,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
@@ -78,6 +85,16 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#606162",
-    // fontFamily: "Raleway-Medium",
+  },
+
+  /* REGISTER BUTTON (orange styling) */
+  registerButton: {
+    backgroundColor: "#FF8719",
+    marginTop: 24,
+  },
+  registerText: {
+    color: "#FFFFFF",
+    fontWeight: "600",
+    fontSize: 16,
   },
 });

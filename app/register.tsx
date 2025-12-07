@@ -1,7 +1,6 @@
-// app/register.tsx
 import React from "react";
 import RegisterPage from "../src/components/registerPage";
 
-export default function RegisterRoute() {
+export default function RegisterScreen() {
   return <RegisterPage />;
 }
